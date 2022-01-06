@@ -22,6 +22,10 @@
         cursor: pointer;
         font-size: 2rem;
         margin-block: 24px;
+        & img {
+          width: 50px;
+          aspect-ratio: 1;
+        }
       }
       &__bars {
         display: none;
@@ -57,11 +61,16 @@
           padding-block: 5px;
           padding-inline: 1rem;
           border-radius: 5px;
+          -webkit-font-smoothing: antialiased;
           font-size: 16px;
           text-transform: uppercase;
           transition: colos 0.4 ease;
+          vertical-align: baseline;
           &:hover {
-            transform: scale(1.2);
+            text-decoration: underline;
+            transform: scale(1.1);
+            text-decoration-color: $orange;
+            text-underline-offset: 100%;
           }
         }
 
@@ -72,6 +81,7 @@
           letter-spacing: 1.5px;
           transform: unset;
           outline: none;
+          text-decoration: initial;
           margin: none;
           background-color: $blue;
           &:hover {
