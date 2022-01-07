@@ -4,11 +4,11 @@
 .container {
   .nav__container {
     background-color: $purple;
-
     .navbar {
+      isolation: isolate;
       position: relative;
       z-index: 10;
-      height: 80px;
+      height: 70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -25,6 +25,12 @@
         & img {
           width: 50px;
           aspect-ratio: 1;
+        }
+        transition: transform 300ms ease-in-out;
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+          outline: none;
         }
       }
       &__bars {
@@ -48,7 +54,6 @@
         list-style: none;
         text-align: center;
         margin-right: 24px;
-
         @include tablet {
           display: none;
         }
@@ -66,7 +71,9 @@
           text-transform: uppercase;
           transition: colos 0.4 ease;
           vertical-align: baseline;
-          &:hover {
+          outline: none;
+          &:hover,
+          &:focus {
             text-decoration: underline;
             transform: scale(1.1);
             text-decoration-color: $orange;
@@ -82,9 +89,10 @@
           transform: unset;
           outline: none;
           text-decoration: initial;
-          margin: none;
+          margin-right: 0;
           background-color: $blue;
-          &:hover {
+          &:hover,
+          &:focus {
             opacity: 0.9;
           }
         }
